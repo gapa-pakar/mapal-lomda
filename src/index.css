@@ -1,0 +1,37 @@
+:root {
+  font-family: "AmaticSC-Regular";
+  direction: rtl;
+
+  /* Colors */
+  --text: #ffffff;
+  --teal: #16a4b9;
+  --darkteal: #1a6185;
+  --lightteal: #b7e4f9;
+  --mist: #a7c7ce;
+  --btn: #447486;
+  --btn-hover: #295160;
+  --btn-inactive: #172533;
+}
+
+@font-face {
+  font-family: AmaticSC-Regular;
+  src: url(./assets/fonts/AmaticSC-Regular.ttf);
+}
+
+@font-face {
+  font-family: AmaticSC-Bold;
+  src: url(./assets/fonts/AmaticSC-Bold.ttf);
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: var(--text);
+}
+
+button {
+  font-family: "AmaticSC-Regular";
+}

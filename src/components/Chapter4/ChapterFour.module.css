@@ -1,0 +1,303 @@
+.bg {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/bgs/Chapter_4.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.title {
+  position: relative;
+  font-size: 5vmax;
+  text-align: center;
+  margin: 0;
+}
+
+.map {
+  position: relative;
+  width: calc(100dvh * (200 / 600));
+  height: 100%;
+  background-image: url("../../assets/graphics/Map.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.ff-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.ff {
+  position: absolute;
+  width: 3vmax;
+  height: 3vmax;
+  cursor: pointer;
+  transition: filter 400ms ease-in-out;
+}
+
+.ff:hover {
+  filter: drop-shadow(0 0 0.4vmax var(--text)) drop-shadow(0 0 0.2vmax var(--teal)) drop-shadow(0 0 0.1vmax var(--darkteal));
+}
+
+.card {
+  position: absolute;
+  background-color: var(--teal);
+  border-radius: 25%;
+  padding: 1vmax;
+  text-align: center;
+  opacity: 0%;
+}
+
+.card-title {
+  font-size: 1.5vmax;
+  font-weight: bold;
+}
+
+.card-desc {
+  font-size: 1.4vmax;
+}
+
+.boat-wrapper {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  width: 7vmax;
+  height: 7vmax;
+  pointer-events: none;
+}
+
+.boat {
+  width: 100%;
+  animation: boat-float 6s ease-in-out infinite;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 78%;
+  left: 2%;
+  margin: 2vh 1vw;
+  width: 7vw;
+  min-width: 80px;
+  cursor: pointer;
+  transition-property:
+    filter,
+    -webkit-filter;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+}
+
+.next-arrow:hover {
+  -webkit-filter: drop-shadow(0px 0px 7px var(--teal));
+  filter: drop-shadow(0px 0px 7px var(--teal));
+}
+
+.transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(var(--teal), var(--darkteal));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fade-out 700ms ease-in-out forwards;
+  animation-delay: 1s;
+  z-index: 99;
+}
+
+.fade-in {
+  animation: fade-in 1s forwards;
+}
+
+.slide-top {
+  animation: slide-top 2s ease-in-out forwards;
+}
+
+.slide-bottom {
+  animation: slide-bottom 2s ease-in-out forwards;
+}
+
+.victoria-anim {
+  animation: victoria-anim 1s ease-in-out forwards;
+}
+
+.niagara-anim {
+  animation: niagara-anim 1s ease-in-out forwards;
+}
+
+.iguaso-anim {
+  animation: iguaso-anim 1s ease-in-out forwards;
+}
+
+.gullfus-anim {
+  animation: gullfus-anim 1s ease-in-out forwards;
+}
+
+.angel-anim {
+  animation: angel-anim 1s ease-in-out forwards;
+}
+
+.tanor-anim {
+  animation: tanor-anim 1s ease-in-out forwards;
+}
+
+/* Media */
+@media screen and (min-width: 800px) {
+  .map {
+    width: calc(100dvh * (500 / 600));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .map {
+    width: calc(100dvh * (800 / 600));
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+
+@keyframes boat-float {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(5%) rotate(4deg);
+  }
+
+  50% {
+    transform: translateY(0%) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(5%) rotate(-4deg);
+  }
+
+  100% {
+    transform: translateY(0%) rotate(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: -100%;
+  }
+}
+
+@keyframes victoria-anim {
+  0% {
+    top: 60%;
+    left: 41%;
+  }
+
+  100% {
+    top: 61%;
+    left: 42%;
+  }
+}
+
+@keyframes niagara-anim {
+  0% {
+    top: 31%;
+    left: 27%;
+  }
+
+  100% {
+    top: 30%;
+    left: 26%;
+  }
+}
+
+@keyframes iguaso-anim {
+  0% {
+    top: 71%;
+    left: 32%;
+  }
+
+  100% {
+    top: 70%;
+    left: 31%;
+  }
+}
+
+@keyframes gullfus-anim {
+  0% {
+    top: 28%;
+    left: 31%;
+  }
+
+  100% {
+    top: 27%;
+    left: 32%;
+  }
+}
+
+@keyframes angel-anim {
+  0% {
+    top: 52%;
+    left: 5%;
+  }
+
+  100% {
+    top: 51%;
+    left: 6%;
+  }
+}
+
+@keyframes tanor-anim {
+  0% {
+    top: 44%;
+    left: 68%;
+  }
+
+  100% {
+    top: 43%;
+    left: 67%;
+  }
+}

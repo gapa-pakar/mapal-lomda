@@ -1,0 +1,245 @@
+.bg {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/bgs/Chapter_3.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 5vmax;
+  text-align: center;
+  margin: 0;
+  transition: margin-top 2s ease-in-out;
+}
+
+.waterfalls {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 85%;
+  transition: height 2s ease-in-out;
+}
+
+.waterfall {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 17%;
+  margin: 2vw;
+  background-image: linear-gradient(var(--darkteal), var(--teal));
+  overflow: hidden;
+  text-align: center;
+}
+
+.waterfall-effect {
+  position: absolute;
+  width: 50%;
+  opacity: 5%;
+  animation: waterfall-effect 3.5s linear infinite;
+}
+
+.waterfall-title {
+  font-size: 3vmax;
+  margin: 2vh 0vw;
+  z-index: 1;
+}
+
+.waterfall-location {
+  font-size: 3vmax;
+  z-index: 1;
+  color: var(--teal);
+}
+
+.waterfall-description {
+  font-size: 1.7vmax;
+  line-height: 3vmax;
+  margin: 2vh 2vw;
+}
+
+.ocean {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  background-image: linear-gradient(var(--teal), var(--darkteal));
+  z-index: 2;
+}
+
+.boat-wrapper {
+  position: relative;
+  transform: translateX(200%);
+  top: -6vh;
+  right: 0;
+  width: 8vw;
+  z-index: 3;
+  min-width: 100px;
+  animation: boat-offscreen 30s linear infinite;
+  animation-delay: 1s;
+  transition: margin-bottom 1s ease-in-out;
+  pointer-events: none;
+}
+
+.boat {
+  width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.ff {
+  position: absolute;
+  top: -5vh;
+  left: -5vw;
+  width: 200%;
+  animation: float 3s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 78%;
+  left: 2%;
+  margin: 2vh 1vw;
+  width: 7vw;
+  min-width: 80px;
+  cursor: pointer;
+  transition-property:
+    filter,
+    -webkit-filter;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+  z-index: 7;
+}
+
+.next-arrow:hover {
+  -webkit-filter: drop-shadow(0px 0px 7px var(--text));
+  filter: drop-shadow(0px 0px 7px var(--text));
+}
+
+.transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mist);
+  animation: fade-out 700ms ease-in-out forwards;
+  animation-delay: 1s;
+  z-index: 99;
+}
+
+.fade-out {
+  animation: fade-out 1s ease-in-out forwards;
+}
+
+/* Media */
+@media screen and (max-width: 1024px) {
+  .waterfall-title {
+    font-size: 3vmax;
+  }
+
+  .waterfall-description {
+    font-size: 2.2vmax;
+    line-height: 3vmax;
+  }
+
+  .waterfall-location {
+    font-size: 2vmax;
+    color: var(--mist);
+  }
+
+  .waterfall {
+    margin: 0 1vw;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .boat-wrapper {
+    top: -6vh;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .boat-wrapper {
+    top: -8vh;
+  }
+}
+
+/* Animations */
+@keyframes waterfall-effect {
+  0% {
+    transform: translateY(0%);
+    opacity: 5%;
+  }
+
+  25% {
+    transform: translateY(100%);
+    opacity: 80%;
+  }
+
+  50% {
+    transform: translateY(200%);
+    opacity: 0%;
+  }
+
+  50.001% {
+    transform: translateY(-200%);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 5%;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes boat-offscreen {
+  0% {
+    transform: translateX(200%);
+  }
+
+  95% {
+    transform: translateX(-1300%);
+  }
+
+  95.001% {
+    transform: translateX(200%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
